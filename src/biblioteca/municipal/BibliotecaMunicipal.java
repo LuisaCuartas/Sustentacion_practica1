@@ -6,10 +6,11 @@ package biblioteca.municipal;
 import java.util.Scanner;
 
 public class BibliotecaMunicipal {
-
+     
     private static Object nombre;
 
-public static void main(String[] args) {
+    @SuppressWarnings("fallthrough")
+    public static void main(String[] args) {
     
     Datos_libros libros[] = new Datos_libros[100];
     Scanner lector = new Scanner (System.in);
@@ -74,24 +75,30 @@ public static void main(String[] args) {
           
             break; 
         case 4:
-            System.out.println("ingrese el libro que desea buscar");
+            System.out.println("ingrese Del libro que desea buscar");
             libros[contUs].setNombre(lector.next());
-             for (int i=0; i<contUs; i++){
-            if(band==0) {
-                System.out.println("LIBRO NO ENCONTRADO");
-             } else {
-                band=0;
-            }break;
-             }
+             if (contUs<99){
+            libros[contUs] = new Datos_libros();    
+            System.out.println("Ingrese el nombre del libro que desea prestar");
+            libros[contUs].setLibros_prestados(lector.next());
+            System.out.println("Ingrese el nombre del libro que desea devolver");
+            libros[contUs].setDeolver_libro(lector.next());
+            System.out.println("Escrba el onmbre de los libros que ha prestado");
+            libros[contUs].setLibros_prestados(lector.next());
+            contUs++;
+            }
+            else {
+                System.out.println("DATOS ERRONEOS");
+    }
+            System.out.println("Digite su cedula para realizar el prestamo");
+            libros[contUs].setCedula_prestante(lector.next());
+            break;
+             
         case 5:
             System.out.println("GRACIAS POR EL UTILIZAR LOS SERVICIOS DE LA BIBLIOTECA, HASTA LUEGO");
             System.exit (0);
             break;        
+     }
+}while (opc!=5);
     }
-    }while (opc!=5);
-    
-    
-
 }
-       
-    }
