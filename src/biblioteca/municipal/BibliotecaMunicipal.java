@@ -1,5 +1,6 @@
 /*
 Práctica_1 programando en java (sustentación)
+autor Luisa Fernanda Cuartas Velasquez cc 1042773933
  */
 package biblioteca.municipal;
 
@@ -17,7 +18,9 @@ public class BibliotecaMunicipal {
     int contUs = 0; 
     int opc=0;
     int band=0;
-    
+    String cclec;
+    Scanner autor=new Scanner(System.in);
+        
     do{
     System.out.println("MENU PRINCIPAL");
     System.out.println("1. Ingresar libro");
@@ -54,7 +57,7 @@ public class BibliotecaMunicipal {
             break;
         case 2:
             System.out.println("ACTUALIZAR DATOS");
-            System.out.println("Digite el nombre a actualizar");
+            System.out.println("Digite el nombre del libro a actualizar");
             String name = lector.next();
             for (int i=0; i<contUs; i++){
             if (name.equals(libros[i].getNombre())) {
@@ -71,10 +74,23 @@ public class BibliotecaMunicipal {
              } else {
                 band=0;
             }break;
-        case 3:  
-          
-            break; 
+        
+      case 3:  
+            System.out.println("Ingrese el libro a eliminar");
+                cclec=(String) nombre ;
+                
+                libros[contUs].setNombre(lector.next());
+                break;
+            
         case 4:
+            System.out.println("Ingrese el libro que desea buscar");
+                 cclec=(String) nombre ;
+                libros[contUs].setNombre(lector.next());
+                break;
+            default: 
+                System.out.println("Ingrese opcion valida");
+        }
+        
             System.out.println("ingrese Del libro que desea buscar");
             libros[contUs].setNombre(lector.next());
              if (contUs<99){
@@ -93,12 +109,15 @@ public class BibliotecaMunicipal {
             System.out.println("Digite su cedula para realizar el prestamo");
             libros[contUs].setCedula_prestante(lector.next());
             break;
-             
-        case 5:
+    
+        }while (opc!=5);
+    
             System.out.println("GRACIAS POR EL UTILIZAR LOS SERVICIOS DE LA BIBLIOTECA, HASTA LUEGO");
-            System.exit (0);
-            break;        
-     }
-}while (opc!=5);
-    }
+            System.exit (0);        
+    
+
+
 }
+       
+}
+        

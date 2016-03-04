@@ -5,6 +5,32 @@ package biblioteca.municipal;
 
 class Datos_libros {
     
+     public void setLibros_prestados(String libros_prestados) {
+        this.libros_prestados = libros_prestados;
+    }
+    private String codigo;
+    private String cantidad;
+    private String area;
+    private String cedula_prestante;
+    private String prestar_libro;
+
+    public Datos_libros(String cedula_prestante, String prestar_libro, String devolver_libro, String libros_prestados) {
+        this.cedula_prestante = cedula_prestante;
+        this.prestar_libro = prestar_libro;
+        this.devolver_libro = devolver_libro;
+        this.libros_prestados = libros_prestados;
+    }
+    private String devolver_libro;
+    private String libros_prestados;
+            
+    public Datos_libros(String nombre, String autor, String año_de_publicacion, String codigo, String cantidad, String area) {
+        this.nombre = nombre;
+        this.autor = autor;
+        this.año_de_publicacion = año_de_publicacion;
+        this.codigo = codigo;
+        this.cantidad = cantidad;
+        this.area = area;
+    }
     private String nombre;
     private String autor;
     private String año_de_publicacion;
@@ -36,34 +62,7 @@ class Datos_libros {
     public String getLibros_prestados() {
         return libros_prestados;
     }
-
-    public void setLibros_prestados(String libros_prestados) {
-        this.libros_prestados = libros_prestados;
-    }
-    private String codigo;
-    private String cantidad;
-    private String area;
-    private String cedula_prestante;
-    private String prestar_libro;
-
-    public Datos_libros(String cedula_prestante, String prestar_libro, String devolver_libro, String libros_prestados) {
-        this.cedula_prestante = cedula_prestante;
-        this.prestar_libro = prestar_libro;
-        this.devolver_libro = devolver_libro;
-        this.libros_prestados = libros_prestados;
-    }
-    private String devolver_libro;
-    private String libros_prestados;
-            
-    public Datos_libros(String nombre, String autor, String año_de_publicacion, String codigo, String cantidad, String area) {
-        this.nombre = nombre;
-        this.autor = autor;
-        this.año_de_publicacion = año_de_publicacion;
-        this.codigo = codigo;
-        this.cantidad = cantidad;
-        this.area = area;
-    }
-
+    
     public String getNombre() {
         return nombre;
     }
@@ -113,6 +112,10 @@ class Datos_libros {
     }
     
     Datos_libros() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void setDeolver_libro(String next) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
